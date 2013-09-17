@@ -41,5 +41,3 @@ e.g. SO5_0_10_13_GEN.root
 * rm -r /tmp/WWbb
 
 
-
-... FIXME ...
