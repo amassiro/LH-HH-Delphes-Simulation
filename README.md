@@ -15,9 +15,31 @@ from https://cp3.irmp.ucl.ac.be/projects/delphes/wiki/WorkBook/ReadingCMSFiles
 * make -j 4
 
 
+Example command:
+
 * ./DelphesCMSFWLite examples/delphes_card_CMS.tcl delphes_output_vbfHH_GEN_8TeV.root /tmp/amassiro/GEN_8TeV.root
 
 
 
 #### script to run on batch
 
+* mkdir /tmp/WWbb
+* eos ls eos/cms/store/user/amassiro/HH/VBF/WWbb/ | awk '{print "eos cp eos/cms/store/user/amassiro/HH/VBF/WWbb/"$1" /tmp/WWbb"}' 
+* eos ls eos/cms/store/user/amassiro/HH/VBF/WWbb/ | awk '{print "eos cp eos/cms/store/user/amassiro/HH/VBF/WWbb/"$1" /tmp/WWbb"}'  | /bin/sh
+
+* mkdir /tmp/WWbbDelphes
+* ls /tmp/WWbb/*_GEN.root | tr "_" " " | awk '{print "./DelphesCMSFWLite examples/delphes_card_CMS.tcl /tmp/WWbbDelphes/delphes_output_vbfHH_"$1"_"$2"_"$3"_GEN.root /tmp/WWbb/"$1"_"$2"_"$3"_GEN.root"}'
+* ls /tmp/WWbb/*_GEN.root | tr "_" " " | awk '{print "./DelphesCMSFWLite examples/delphes_card_CMS.tcl /tmp/WWbbDelphes/delphes_output_vbfHH_"$1"_"$2"_"$3"_GEN.root /tmp/WWbb/"$1"_"$2"_"$3"_GEN.root"}' | /bin/sh
+
+e.g. SO5_0_10_13_GEN.root
+
+* ls /tmp/WWbbDelphes/*.root | awk '{ print "eos cp /tmp/WWbbDelphes/"$1" eos/cms/store/user/amassiro/HH/VBF/WWbb/"}'
+* ls /tmp/WWbbDelphes/*.root | awk '{ print "eos cp /tmp/WWbbDelphes/"$1" eos/cms/store/user/amassiro/HH/VBF/WWbb/"}' | /bin/sh
+
+
+* rm -r /tmp/WWbbDelphes
+* rm -r /tmp/WWbb
+
+
+
+... FIXME ...
