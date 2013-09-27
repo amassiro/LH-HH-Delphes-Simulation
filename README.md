@@ -33,8 +33,8 @@ Example command:
 
 e.g. SO5_0_10_13_GEN.root
 
-* ls /tmp/WWbbDelphes/*.root | awk '{ print "eos cp /tmp/WWbbDelphes/"$1" eos/cms/store/user/amassiro/HH/VBF/WWbb/"}'
-* ls /tmp/WWbbDelphes/*.root | awk '{ print "eos cp /tmp/WWbbDelphes/"$1" eos/cms/store/user/amassiro/HH/VBF/WWbb/"}' | /bin/sh
+* ls /tmp/WWbbDelphes/*.root | awk '{ print "eos cp /tmp/WWbbDelphes/"$1" eos/cms/store/user/amassiro/HH/VBF/WWbb-Delphes/"}'
+* ls /tmp/WWbbDelphes/*.root | awk '{ print "eos cp /tmp/WWbbDelphes/"$1" eos/cms/store/user/amassiro/HH/VBF/WWbb-Delphes/"}' | /bin/sh
 
 
 * rm -r /tmp/WWbbDelphes
