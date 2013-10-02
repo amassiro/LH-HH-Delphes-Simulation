@@ -24,8 +24,8 @@ Example command:
 #### script to run on batch
 
 * mkdir /tmp/WWbb
-* eos ls eos/cms/store/user/amassiro/HH/VBF/WWbb/ | awk '{print "eos cp eos/cms/store/user/amassiro/HH/VBF/WWbb/"$1" /tmp/WWbb"}' 
-* eos ls eos/cms/store/user/amassiro/HH/VBF/WWbb/ | awk '{print "eos cp eos/cms/store/user/amassiro/HH/VBF/WWbb/"$1" /tmp/WWbb"}'  | /bin/sh
+* eos ls eos/cms/store/user/amassiro/HH/VBF/WWbb/ | awk '{print "eos cp /eos/cms/store/user/amassiro/HH/VBF/WWbb/"$1" /tmp/WWbb"}' 
+* eos ls eos/cms/store/user/amassiro/HH/VBF/WWbb/ | awk '{print "eos cp /eos/cms/store/user/amassiro/HH/VBF/WWbb/"$1" /tmp/WWbb"}'  | /bin/sh
 
 * mkdir /tmp/WWbbDelphes
 * ls /tmp/WWbb/*_GEN.root | tr "_" " " | sed -e s%/tmp/WWbb/%%g | awk '{print "./DelphesCMSFWLite examples/delphes_card_CMS.tcl /tmp/WWbbDelphes/delphes_output_vbfHH_"$1"_"$2"_"$3"_"$4"_GEN.root /tmp/WWbb/"$1"_"$2"_"$3"_"$4"_GEN.root"}'
@@ -43,3 +43,8 @@ e.g. SO5_0_10_13_GEN.root
 * rm -r /tmp/WWbb
 
 
+
+
+#### script
+
+./SubmitDelphesSimulation.sh
